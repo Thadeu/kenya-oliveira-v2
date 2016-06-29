@@ -50,5 +50,7 @@ test:
 production:
   <<: *default
   database: kenya-oliveira-v2_production
-  username: kenya-oliveira-v2
-  password: <%= ENV['KENYA-OLIVEIRA-V2_DATABASE_PASSWORD'] %>
+  username: root
+  password: nicole1
+  secret_token: cfe17d7283dce5a9c1ad2e978be1f5f801dae01ad4458a76867f3f772dfff3a457f3a963f4f48e955355758fec94bd2fe732912e9d1ca2548ade47839fe0dc8d
+  secret_key_base: cfe17d7283dce5a9c1ad2e978be1f5f801dae01ad4458a76867f3f772dfff3a457f3a963f4f48e955355758fec94bd2fe732912e9d1ca2548ade47839fe0dc8d
