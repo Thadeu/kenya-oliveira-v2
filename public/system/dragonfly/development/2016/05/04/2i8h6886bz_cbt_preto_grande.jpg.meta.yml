@@ -1,0 +1,4 @@
+---
+name: cbt-preto-grande.jpg
+model_class: Admin::Photo
+model_attachment: image

@@ -1,0 +1,27 @@
+doctype html
+html
+  head
+    meta name="keywords" content="template language"
+    meta name="author" content=""
+    meta charset="utf8"
+    meta name="viewport" content="width=device-width, initial-scale=1.0"
+    
+    //mobile color
+    meta name="theme-color" content="#3c8dbc"
+    meta name="msapplication-navbutton-color" content="#3c8dbc"
+    meta name="apple-mobile-web-app-status-bar-style" content="#3c8dbc"
+
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+    
+    title Kenya Oliveira Fotográfa
+  body    
+        
+    = render 'site/partials/navbar'
+    
+    == yield
+    
+    = render 'site/partials/footer'
+    
+    = javascript_include_tag 'application', 'data-turbolinks-eval' => false
+    = yield(:javascript)

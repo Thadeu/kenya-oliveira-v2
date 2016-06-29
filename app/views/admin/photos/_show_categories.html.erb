@@ -1,0 +1,52 @@
+<div class="ui stackable grid">
+  <div class="ui divider horizontal">
+    <i class="icon alarm"></i>
+    Informações
+  </div>
+</div>
+
+<div class="ui container grid stackable">
+  <div class="ui container row stackable">
+    <div class="ui cards">
+      <% @categories.each do |category| %>
+      <div class="ui card">
+
+        <div class="content">
+          <%= link_to [category, 'photos'], class: 'header' do %>
+            <%= category.name %>
+          <% end %>
+
+          <div class="meta">
+            <a><%= time_ago_in_words(category.created_at) %></a>
+          </div>
+        </div>
+
+        <div class="extra content">
+          <span>
+            <i class="camera icon"></i>
+            <%= count_photos(category) %>
+            itens
+          </span>
+        </div>
+
+        <div class="extra content">
+          <span class="left floated">
+            <%= link_to ['new', category, 'photo'], class: '' do %>
+              <i class="add icon"></i>
+              Adicionar Foto
+            <% end %>
+          </span>
+
+          <span class="right floated">
+            <%= link_to [category,'photos'], class: '' do %>
+              <i class="world icon"></i>
+              Ver Fotos
+            <% end %>
+          </span>
+        </div>
+
+      </div>
+      <% end %>
+    </div>
+  </div><!-- container row -->
+</div><!-- grid -->

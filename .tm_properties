@@ -1,0 +1,6 @@
+excludeDirectories = '{$exclude,log,vendor,tmp,META-INF,.svn,app/cache,web,app/logs}'
+
+[*.*]
+softWrap         = false
+softTabs         = true
+tabSize          = 2

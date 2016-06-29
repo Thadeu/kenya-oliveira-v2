@@ -1,0 +1,4 @@
+---
+name: banner_saude-naoaprov1.jpg
+model_class: Admin::Photo
+model_attachment: image

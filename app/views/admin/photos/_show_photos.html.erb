@@ -1,0 +1,46 @@
+<div class="ui stackable grid">
+  <div class="ui divider horizontal">
+    <i class="icon alarm"></i>
+    Albuns Cadastrados
+  </div>
+</div>
+
+<div class="ui container grid stackable">
+  <div class="ui container row stackable">
+    <div class="ui cards">
+      <% @photos.each do |photo| %>
+      <div class="ui card">
+
+        <%= link_to edit_admin_category_photo_path(params[:category_id], photo.id), class: 'image' do %>
+          <%= image_tag photo.image.thumb('300x250#').url, class: '' if photo.image_stored? %>
+        <% end %>
+
+        <div class="content">
+          <div class="header"><%= photo.name %></div>
+
+          <div class="meta">
+            <a><%= time_ago_in_words(photo.created_at) %></a>
+          </div>
+        </div>
+
+        <div class="extra content">
+          <span class="left floated">
+            <%= link_to edit_admin_category_photo_path(params[:category_id], photo.id), class: '' do %>
+              <i class="edit icon"></i>
+              Editar Foto
+            <% end %>
+          </span>
+
+          <span class="right floated">
+            <%= link_to admin_photo_path(photo.id), method: :delete, data: {confirm: 'Tem certeza que quer excluir?'} do %>
+              <i class="trash icon"></i>
+              Deletar Foto
+            <% end %>
+          </span>
+        </div>
+
+      </div>
+      <% end %>
+    </div>
+  </div><!-- container row -->
+</div><!-- grid -->

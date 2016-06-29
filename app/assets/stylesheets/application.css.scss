@@ -1,0 +1,82 @@
+/*
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+* or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the bottom of the
+* compiled file so the styles you add here take precedence over styles defined in any styles
+* defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+* file per style scope.
+*
+*= require semantic
+*= require_tree .
+*= require_self
+*/
+
+::-webkit-scrollbar {
+  width: 6px !important;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0,0,0,.1);
+}
+
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 1px;
+  border-radius: 1px;
+  background: rgba(0,0,0,.2);
+}
+
+.masthead.segment{
+  min-height: 700px;
+  padding: 1em 0em;
+  width: 100%;
+  background: url("bg-index.jpg") no-repeat center center !important;
+  background-size: cover !important;
+}
+
+.masthead h1.ui.header{
+  margin-top: 3em;
+  margin-bottom: 0px;
+  font-size: 4em;
+  font-weight: normal;
+}
+
+.footer.segment{
+  padding: 5em 0;
+}
+
+.album{
+  margin-bottom: 1.3em !important;
+  padding-top: 1em;
+}
+
+.ui.secondary.inverted.pointing.menu{
+  border: none !important;
+}
+
+.hidden{
+  display: none;
+}
+
+.text-center{
+  text-align: center;
+}
+
+.file-upload-box{
+  padding: 150px 0px !important;
+  background: #f2f2f2 !important;
+  border: 2px dashed #aaa !important;
+  font-size: 1.7em !important;
+  @extend .text-center;
+
+  table{
+    margin: 0 auto !important;
+  }
+}
+
+.main{
+
+}

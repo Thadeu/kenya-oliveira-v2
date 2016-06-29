@@ -1,0 +1,4 @@
+---
+name: banner_saude_002.jpg
+model_class: Admin::Photo
+model_attachment: image

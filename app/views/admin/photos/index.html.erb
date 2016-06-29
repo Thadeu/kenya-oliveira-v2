@@ -1,0 +1,16 @@
+<div class="ui grid stackable">
+  <div class="ui container">
+    <h2 class="ui header">
+      Gerenciamento de Fotos
+      <div class="sub header"><small>Selecione qual categoria você deseja adicionar uma foto</small></div>
+    </h2>
+  </div>
+</div>
+
+<%= render 'layouts/notice' %>
+
+<% if params[:category_id].present? %>
+  <%= render 'show_photos' %>
+<% else %>
+  <%= render 'show_categories' %>
+<% end %>

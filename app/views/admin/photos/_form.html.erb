@@ -1,0 +1,67 @@
+<div class="ui container grid stackable">
+  <div class="ui container row stackable">
+    <div class="ui tab container active" data-tab="first">
+
+      <div class="ui column row stackable">
+        <%= simple_form_for(@admin_photo, html: {novalidate: false, class: 'ui form category', multipart: true}) do |f| %>
+
+        <div class="two fields">
+          <div class="four wide field">
+            <label>Categoria</label>
+            <%= f.association :admin_category, label: false, input_html: {class: 'ui fluid selection dropdown'} %>
+          </div>
+
+          <div class="twelve wide field">
+            <label for="">Nome da Foto</label>
+            <%= f.input :name, label: false %>
+          </div>
+        </div>
+
+        <div class="field">
+          <%= f.input :image, as: :image_preview, label: false, size: "800x600" %>
+        </div>
+
+        <%= f.button :submit, value: 'Salvar', class: 'blue' %>
+        <% end %>
+      </div><!-- fim column -->
+    </div><!-- container tab first -->
+  </div><!-- container row -->
+</div><!-- grid -->
+
+<% content_for :javascript do %>
+<script type="text/javascript">
+$('.ui.form.category').form({
+  inline : true,
+  on: 'submit',
+  fields: {
+    name: {
+      identifier  : 'admin_photo[name]',
+      rules: [
+        {
+          type   : 'empty',
+          prompt : 'Por favor digite o nome da foto, é importante para ranking do google.'
+        }
+      ],
+    },
+    admin_category_id: {
+      identifier  : 'admin_photo[admin_category_id]',
+      rules: [
+        {
+          type   : 'empty',
+          prompt : 'Por favor digite o nome da CATEGORIA!'
+        }
+      ],
+    },
+    image: {
+      identifier  : 'admin_photo[image]',
+      rules: [
+        {
+          type   : 'empty',
+          prompt : 'Seleciona um imagem!'
+        }
+      ],
+    },
+  }
+});
+</script>
+<% end %>

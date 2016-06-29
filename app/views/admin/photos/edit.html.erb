@@ -1,0 +1,26 @@
+<div class="ui grid stackable">
+  <div class="two column row">
+    <div class="ten wide column">
+      <div class="left floated column">
+        <h2 class="ui header">
+          Editar Foto
+          <div class="sub header"><small>Gerenciamento de Fotos</small></div>
+        </h2>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tab Menu -->
+  <div class="ui stackable grid">
+    <div class="row">
+      <div class="left floated column">
+        <div class="ui secondary pointing menu blue">
+          <%= link_to 'Todos', admin_photos_path, class: 'ui item' %>
+          <%= link_to 'Cadastrar Categorias', new_admin_photo_path, class: 'ui item active' %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= render 'form' %>
