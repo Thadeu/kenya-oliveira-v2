@@ -1,65 +1,66 @@
-<div class="ui menu main inverted purple attached stackable grid">
+<% if current_admin_user %>
+  <div class="ui menu main mobiled inverted teal attached stackable grid">
 
-  <div class="mobile tablet only row">
-    <a class="item sidebar-push"><i class="big sidebar icon"></i>Menu</a>
+    <div class="mobile tablet only row">
+      <a class="item sidebar-push"><i class="big sidebar icon"></i>Menu</a>
+    </div>
+
+    <div class="computer only row">
+      <a class="item sidebar-push"><i class="sidebar icon"></i>Menu</a>
+
+      <%= link_to admin_categories_path, class: 'item' do %>
+        Gerenciar Categorias
+      <% end %>
+
+      <%= link_to admin_photos_path, class: 'item' do %>
+        Gerenciamento de Fotos
+      <% end %>
+    
+    
+      <div class="right menu">
+        <div class="ui simple dropdown item">
+            <i class="settings icon"></i> Configurações
+            <div class="menu">
+
+              <div class="header">Perfil de Usuário</div>
+              <%= link_to edit_admin_user_registration_path, class: 'item' do %>
+                <%= current_admin_user.name if current_admin_user.present? %>
+              <% end %>
+
+              <div class="header">Opções</div>
+              <%= link_to destroy_admin_user_session_path, :method => :delete, class: 'item' do %>
+                Sair
+              <% end %>
+            </div>
+        </div>
+      </div>
+
+    </div>
   </div>
 
-  <div class="computer only row">
-    <a class="item sidebar-push"><i class="big sidebar icon"></i>Menu</a>
+  <!-- Sidebar Menu -->
+  <div class="ui sidebar sidebar-main wide vertical left accordion menu">
+    <div class="header item">
+      <h2 class="ui center aligned icon header">
+        Kenya Oliveira
+        <div class="sub header"><small>Sistema de Gestão de Fotos</small></div>
+      </h2>
+    </div>
+
+    <%= link_to root_path, class: 'item' do %>
+      <i class="home icon"></i>
+      Home
+    <% end %>
 
     <%= link_to admin_categories_path, class: 'item' do %>
-      <i class="icon list big"></i>
       Gerenciar Categorias
     <% end %>
 
     <%= link_to admin_photos_path, class: 'item' do %>
-      <i class="icon send big"></i>
+      <i class="icon send"></i>
       Gerenciamento de Fotos
     <% end %>
 
-    <div class="right menu">
-      <div class="ui simple dropdown item">
-          <i class="big settings icon"></i> Configurações
-          <div class="menu">
-
-            <div class="header">Perfil de Usuário</div>
-            <%= link_to edit_admin_user_registration_path, class: 'item' do %>
-              <%= current_admin_user.name %>
-            <% end %>
-
-            <div class="header">Opções</div>
-            <%= link_to destroy_admin_user_session_path, class: 'item' do %>
-              Sair
-            <% end %>
-          </div>
-      </div>
-    </div>
-
+    <a class="ui item active red" title="Sair" href="#">Sair do Sistema <i class="sign out icon"></i></a>
   </div>
-</div>
-
-<!-- Sidebar Menu -->
-<div class="ui sidebar sidebar-main wide vertical left accordion menu">
-  <div class="header item">
-    <h2 class="ui center aligned icon header">
-      Kenya Oliveira
-      <div class="sub header"><small>Sistema de Gestão de Fotos</small></div>
-    </h2>
-  </div>
-
-  <%= link_to root_path, class: 'item' do %>
-    <i class="home icon"></i>
-    Home
-  <% end %>
-
-  <%= link_to admin_categories_path, class: 'item' do %>
-    Gerenciar Categorias
-  <% end %>
-
-  <%= link_to admin_photos_path, class: 'item' do %>
-    <i class="icon send"></i>
-    Gerenciamento de Fotos
-  <% end %>
-
-  <a class="ui item active red" title="Sair" href="#">Sair do Sistema <i class="sign out icon"></i></a>
-</div>
+<% end %>

@@ -33,7 +33,7 @@
   min-height: 700px;
   padding: 1em 0em;
   width: 100%;
-  background: url("bg-index.jpg") no-repeat center center !important;
+  background: #111 image-url("bg-index.jpg") no-repeat center center !important;
   background-size: cover !important;
 }
 
@@ -42,6 +42,15 @@
   margin-bottom: 0px;
   font-size: 4em;
   font-weight: normal;
+}
+
+.ui.menu.main.mobiled{
+  margin-bottom: 20px;
+  
+  .row{
+    padding-top: 0;
+    padding-bottom: 0;
+  }
 }
 
 .footer.segment{
@@ -75,8 +84,4 @@
   table{
     margin: 0 auto !important;
   }
-}
-
-.main{
-
 }

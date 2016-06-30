@@ -5,11 +5,9 @@ Rails.application.routes.draw do
   end
 
   root to: 'site/pages#index'
-  get "/admin"       => redirect("/admin/photos")
+  get "/admin" => redirect("/admin/photos")
   
-  # Route Site
   draw :site
-  
-  # Route Administration Fotos and Categories
   draw :admin
+  
 end

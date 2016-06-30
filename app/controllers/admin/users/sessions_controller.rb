@@ -1,6 +1,8 @@
 class Admin::Users::SessionsController < Devise::SessionsController
   #before_filter :configure_sign_in_params, only: [:create]
 
+  layout 'admin'
+
   # GET /resource/sign_in
   def new
     super
@@ -12,9 +14,9 @@ class Admin::Users::SessionsController < Devise::SessionsController
   # end
 
   # DELETE /resource/sign_out
-  # def destroy
-  #   super
-  # end
+  def destroy
+    super
+  end
 
   # protected
 
