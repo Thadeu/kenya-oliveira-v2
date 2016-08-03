@@ -1,52 +1,52 @@
-  .ui.grid
-    .computer.only.row
-      .ui.inverted.fixed.menu.navbar
-        
-        = link_to admin_path, class: 'brand item'
-          h3 Kenya Oliveira
-                    
-        = link_to admin_path, class: 'item'
-          i.home.icon
-          | Home
-          
-          - if admin_user_signed_in?
-
-            = link_to admin_categories_path, class: 'item'
-              | Gerenciar Categorias
-
-            = link_to admin_photos_path, class: 'item'
-              | Gerenciamento de Fotos
-            
-            = link_to destroy_admin_user_session_path, method: :delete, data: {confirm: 'Deseja sair do sistema?'}, class: 'ui item right'
-              i.sign.out.icon
-    
-              | Sair do Sistema
-
-    .mobile.tablet.only.row
-      .ui.fixed.inverted.navbar.menu
-        .menu.open
-          a.menu.item
-            i.content.icon
-          
-        = link_to admin_path, class: 'brand item'
-          h3 Kenya Oliveira
+.ui.grid
+  .computer.only.row
+    .ui.inverted.fixed.menu.navbar
       
-        - if admin_user_signed_in?
+      = link_to admin_path, class: 'brand item'
+        h3 Kenya Oliveira
+                  
+      = link_to admin_path, class: 'item'
+        i.home.icon
+        | Home
         
-          .ui.sidebar.main.inverted.menu.vertical.left
+        - if admin_user_signed_in?
+
+          = link_to admin_categories_path, class: 'item'
+            | Gerenciar Categorias
+
+          = link_to admin_photos_path, class: 'item'
+            | Gerenciamento de Fotos
           
-            = link_to admin_path, class: 'item'
-              i.home.icon
-              | Home
+          = link_to destroy_admin_user_session_path, method: :delete, data: {confirm: 'Deseja sair do sistema?'}, class: 'ui item right'
+            i.sign.out.icon
+  
+            | Sair do Sistema
 
-            = link_to admin_categories_path, class: 'item'
-              | Gerenciar Categorias
+  .mobile.tablet.only.row
+    .ui.fixed.inverted.navbar.menu
+      .menu.open
+        a.menu.item
+          i.content.icon
+        
+      = link_to admin_path, class: 'brand item'
+        h3 Kenya Oliveira
+    
+      - if admin_user_signed_in?
+      
+        .ui.sidebar.main.inverted.menu.vertical.left
+        
+          = link_to admin_path, class: 'item'
+            i.home.icon
+            | Home
 
-            = link_to admin_photos_path, class: 'item'
-              | Gerenciamento de Fotos
+          = link_to admin_categories_path, class: 'item'
+            | Gerenciar Categorias
 
-            = link_to destroy_admin_user_session_path, method: :delete, data: {confirm: 'Deseja sair do sistema?'}, class: 'ui item'
-              i.sign.out.icon
+          = link_to admin_photos_path, class: 'item'
+            | Gerenciamento de Fotos
 
-              | Sair do Sistema
-          
+          = link_to destroy_admin_user_session_path, method: :delete, data: {confirm: 'Deseja sair do sistema?'}, class: 'ui item'
+            i.sign.out.icon
+
+            | Sair do Sistema
+        
