@@ -1,4 +1,5 @@
 namespace :admin do
+
   resources :categories do
     resources :photos
   end

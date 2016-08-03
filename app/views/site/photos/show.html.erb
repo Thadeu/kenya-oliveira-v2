@@ -1,0 +1,16 @@
+<% content_for :header do %>
+  <%= render 'site/partials/navbar' %>
+<% end %>
+
+<% content_for :content do %>
+  <div class="image">
+    <%= image_tag @photo.image.url, class: 'ui fluid image' if @photo.image_stored? %>
+  </div>
+
+  <div class="">
+    <h1><%= @photo.admin_category.name %></h1>
+    <h3><%= @photo.name %></h3>
+  </div>
+<% end %>
+
+<%= render 'site/partials/footer' %>

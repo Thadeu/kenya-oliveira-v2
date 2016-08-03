@@ -1,32 +1,27 @@
-<div class="ui container grid stackable">
-  <div class="ui container row stackable">
-    <div class="ui tab container active" data-tab="first">
+<div class="ui tab active" data-tab="first">
+  <div class="ui column row stackable">
+    <%= simple_form_for(@admin_photo, html: {novalidate: false, class: 'ui form category', multipart: true}) do |f| %>
 
-      <div class="ui column row stackable">
-        <%= simple_form_for(@admin_photo, html: {novalidate: false, class: 'ui form category', multipart: true}) do |f| %>
+    <div class="fields">
+      <div class="four wide column field">
+        <label>Categoria</label>
+        <%= f.association :admin_category, label: false, input_html: {class: 'ui fluid selection dropdown'} %>
+      </div>
 
-        <div class="two fields">
-          <div class="four wide field">
-            <label>Categoria</label>
-            <%= f.association :admin_category, label: false, input_html: {class: 'ui fluid selection dropdown'} %>
-          </div>
+      <div class="twelve wide column field">
+        <label for="">Nome da Foto</label>
+        <%= f.input :name, label: false %>
+      </div>
+    </div>
 
-          <div class="twelve wide field">
-            <label for="">Nome da Foto</label>
-            <%= f.input :name, label: false %>
-          </div>
-        </div>
+    <div class="field">
+      <%= f.input :image, as: :image_preview, label: false, size: "320x320" %>
+    </div>
 
-        <div class="field">
-          <%= f.input :image, as: :image_preview, label: false, size: "800x600" %>
-        </div>
-
-        <%= f.button :submit, value: 'Salvar', class: 'blue' %>
-        <% end %>
-      </div><!-- fim column -->
-    </div><!-- container tab first -->
-  </div><!-- container row -->
-</div><!-- grid -->
+    <%= f.button :submit, value: 'Salvar', class: 'blue' %>
+    <% end %>
+  </div><!-- fim column -->
+</div><!-- container tab first -->
 
 <% content_for :javascript do %>
 <script type="text/javascript">

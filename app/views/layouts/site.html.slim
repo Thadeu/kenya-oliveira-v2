@@ -11,17 +11,17 @@ html
     meta name="msapplication-navbutton-color" content="#3c8dbc"
     meta name="apple-mobile-web-app-status-bar-style" content="#3c8dbc"
 
-    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+    = stylesheet_link_tag "https://fonts.googleapis.com/css?family=Great+Vibes", media: 'all'
     = csrf_meta_tags
     
     title Kenya Oliveira Fotográfa
   body    
         
-    = render 'site/partials/navbar'
-    
-    == yield
-    
-    = render 'site/partials/footer'
+    .main.wrapper
+      = yield :header
+      = yield :content
+    = yield :footer
     
     = javascript_include_tag 'application', 'data-turbolinks-eval' => false
-    = yield(:javascript)
+    = yield :javascript

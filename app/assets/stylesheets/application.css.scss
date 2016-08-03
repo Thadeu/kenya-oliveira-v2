@@ -15,63 +15,65 @@
 *= require_self
 */
 
-::-webkit-scrollbar {
-  width: 6px !important;
-}
+@import 'helpers';
 
-::-webkit-scrollbar-track {
-  background: rgba(0,0,0,.1);
-}
-
-::-webkit-scrollbar-thumb {
-  -webkit-border-radius: 1px;
-  border-radius: 1px;
-  background: rgba(0,0,0,.2);
-}
-
-.masthead.segment{
-  min-height: 700px;
-  padding: 1em 0em;
+body{
+  display: table;
+  min-height: 100%;
   width: 100%;
-  background: #111 image-url("bg-index.jpg") no-repeat center center !important;
-  background-size: cover !important;
+  overflow-x: hidden;
 }
 
-.masthead h1.ui.header{
-  margin-top: 3em;
-  margin-bottom: 0px;
-  font-size: 4em;
-  font-weight: normal;
+.main.wrapper{
+  display: table-row;
+  height: 100%;
+}
+
+.masthead{
+  &.segment{
+    min-height: 600px;
+    padding: 1em 0em;
+    width: 100%;
+    background: #111 image-url("bg-index.jpg") no-repeat center center !important;
+    background-size: cover !important;
+
+    .header{
+      margin-top: 0.5em;
+      margin-bottom: 0px;
+
+      font-size: 6em;
+      font-weight: normal;
+      font-family: "Great Vibes", "Open Sans", sans-serif;
+
+      text-shadow: 1px 10px 10px #333;
+      -webkit-text-shadow: 1px 10px 10px #333;
+      -moz-text-shadow: 1px 10px 10px #333;
+    }
+  }
 }
 
 .ui.menu.main.mobiled{
   margin-bottom: 20px;
-  
+
   .row{
     padding-top: 0;
     padding-bottom: 0;
   }
 }
 
-.footer.segment{
-  padding: 5em 0;
+.ui.secondary.inverted.pointing.menu,
+.ui.secondary.pointing.menu{
+  border: none !important;
 }
 
 .album{
   margin-bottom: 1.3em !important;
   padding-top: 1em;
-}
 
-.ui.secondary.inverted.pointing.menu{
-  border: none !important;
-}
-
-.hidden{
-  display: none;
-}
-
-.text-center{
-  text-align: center;
+  .header h2{
+    font-family: "Great Vibes";
+    font-size: 2em;
+  }
 }
 
 .file-upload-box{
@@ -84,4 +86,15 @@
   table{
     margin: 0 auto !important;
   }
+}
+
+.footer.segment{
+  padding: 5em 0;
+}
+
+/**
+* ADMIN SCSS
+*/
+.admin{
+  margin-top: 3em !important;
 }

@@ -4,6 +4,6 @@ class Site::PagesController < ApplicationController
     @categories = Admin::Category.order("updated_at DESC")
   end
 
-  def categories
+  def photo
   end
 end

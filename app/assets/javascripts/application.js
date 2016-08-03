@@ -17,7 +17,7 @@
 //= require_tree .
 
 $(document).on('page:change', function(){
-  
+
   /**
    * Dimmer for hover Cards Specials
    * @private
@@ -26,6 +26,11 @@ $(document).on('page:change', function(){
    * @type String|Object|Array|Boolean|Number
    */
   
+  $('.menu.open').on("click",function(e){
+    e.preventDefault();
+    $('.ui.sidebar.main').sidebar('toggle');
+  });
+
   $('.special.cards .image').dimmer({
     on: 'hover'
   });
@@ -37,21 +42,6 @@ $(document).on('page:change', function(){
    * @return {[type]}                       [description]
    */
    $('.ui.modal').modal('show');
-
-  /**
-   * Ativa o uso de Sidebar
-   * @param  {[type]} '.sidebar-push' [description]
-   * @return {[type]}                 [description]
-   */
-  $('.sidebar-push').on('click', function(e){
-    e.preventDefault();
-
-    $('.ui.sidebar.sidebar-main')
-      .sidebar({
-        overlay: false
-      })
-      .sidebar('toggle');
-  });
 
   /**
    * Ativa o Dropdown
@@ -111,7 +101,7 @@ $(document).on('page:change', function(){
    * @param  {[type]} '.item' [description]
    * @return {[type]}         [description]
    */
-  $('.item, .open-popup, .popup, .popup-info')
+  $('.open-popup, .popup, .popup-info')
   .popup({
     on: 'hover'
   });

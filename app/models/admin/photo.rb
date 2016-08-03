@@ -25,7 +25,7 @@ class Admin::Photo < ActiveRecord::Base
 
   #relacionamento com usuário
   belongs_to :user
-  #relacionamento com tabela de photos
+  #relacionamento com tabela de category
   belongs_to :admin_category, class_name: 'Admin::Category'
 
   #upload de photos

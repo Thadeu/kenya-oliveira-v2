@@ -1,39 +1,34 @@
-<div class="ui container grid stackable">
-  <div class="ui container row stackable">
-    <div class="ui tab container active" data-tab="first">
+<div class="ui tab active" data-tab="first">
+  <div class="column">
+    <%= simple_form_for(@admin_category, html: {novalidate: false, class: 'ui form category'}) do |f| %>
+      <%= f.error_notification %>
+      
+      <div class="field">
+        <label>Nome</label>
+        <%= f.input :name, label: false %>
+      </div>
 
-      <div class="ui column row stackable">
-        <%= simple_form_for(@admin_category, html: {novalidate: false, class: 'ui form category'}) do |f| %>
-          <%= f.error_notification %>
-
-          <div class="ui field">
-            <label>Nome</label>
-            <%= f.input :name, label: false %>
-          </div>
-
-          <%= f.button :submit, value: 'Salvar', class: 'purple' %>
-        <% end %>
-      </div><!-- fim column -->
-    </div><!-- container tab first -->
-  </div><!-- container row -->
-</div><!-- grid -->
+      <%= f.button :submit, value: 'Salvar', class: '' %>
+    <% end %>
+  </div><!-- fim column -->
+</div><!-- container tab first -->
 
 <% content_for :javascript do %>
 <script type="text/javascript">
-$('.ui.form.category').form({
-inline : true,
-on: 'submit',
-  fields: {
-    empty: {
-      identifier  : 'admin_category[name]',
-      rules: [
-        {
-          type   : 'empty',
-          prompt : 'Por favor digite o nome da categoria'
-        }
-      ]
-    },
-  }
-});
+  $('.ui.form.category').form({
+  inline : true,
+  on: 'submit',
+    fields: {
+      empty: {
+        identifier  : 'admin_category[name]',
+        rules: [
+          {
+            type   : 'empty',
+            prompt : 'Por favor digite o nome da categoria'
+          }
+        ]
+      },
+    }
+  });
 </script>
 <% end %>

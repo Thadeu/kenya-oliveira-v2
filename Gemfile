@@ -48,7 +48,7 @@ group :development, :test do
   gem 'spring'
   gem "awesome_print", require:"ap"
   gem 'quiet_assets'
-  gem 'rails_db'
+  gem 'rspec-rails', '~> 3.5'
 end
 
 group :api do

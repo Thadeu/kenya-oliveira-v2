@@ -1,17 +1,23 @@
-<div class="ui grid stackable">
-  <div class="ui container">
+<div class="ui grid padded">
+  <div class="ui row">
     <h2 class="ui header">
       Adicionar Foto em categoria
       <div class="sub header"><small>Selecione qual categoria você deseja adicionar uma foto</small></div>
     </h2>
   </div>
+
+  <!-- Tab Menu -->
+
+  <div class="row">
+    <div class="ui secondary menu black">
+      <%= link_to 'Todos', admin_photos_path, class: 'ui item' %>
+    </div>
+  </div>
 </div>
 
-<div class="ui stackable grid">
-  <div class="ui divider horizontal">
-    <i class="icon alarm"></i>
-    Preencha os campos abaixo
-  </div>
+<div class="ui divider horizontal">
+  <i class="icon info"></i>
+  Formulário
 </div>
 
 <%= render 'form' %>
