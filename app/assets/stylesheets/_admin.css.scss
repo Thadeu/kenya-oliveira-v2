@@ -1,0 +1,26 @@
+/*
+*
+*
+* Admin Stylesheets SCSS
+*
+*
+*/
+.text-center{
+  text-align: center;
+}
+
+.admin{  
+  margin-top: 3em !important;
+  
+  .file-upload-box{
+    padding: 150px 0px !important;
+    background: #f2f2f2 !important;
+    border: 2px dashed #aaa !important;
+    font-size: 1.7em !important;
+    @extend .text-center;
+
+    table{
+      margin: 0 auto !important;
+    }
+  }
+}

@@ -1,0 +1,35 @@
+= render "site/partials/header"
+
+= content_for :content
+  .ui.basic.segment
+    .ui.grid.row.padded
+      - @categories.each do |cat|
+        .sixteen.wide.column.album
+
+          .ui.header
+            h2 = "#{cat.name} (#{cat.admin_photo.count})"
+          
+          .ui.special.cards        
+            - @photos.each do |photo|
+              - if photo.admin_category_id == cat.id
+            
+                .photo.ui.card
+                  .blurring.dimmable.image
+                    .ui.dimmer
+                      .content
+                        .center
+                          h3 = photo.name
+                          p = cat.name
+                          = link_to 'Ver Foto', site_photo_show_path(cat.slug, photo.id), class: 'ui inverted button'
+                    .image_tag
+                      = image_tag photo.image.thumb('250x250#').url, class: 'ui fluid image' if photo.image_stored?          
+  sass:
+    .ui.cards
+      .card
+        box-shadow: none
+
+        .image
+          border-radius: 2px
+  
+  
+= render "site/partials/footer"

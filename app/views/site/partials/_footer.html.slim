@@ -11,11 +11,9 @@
         
         .three.wide.column
           h4.ui.inverted.header Serviços
-          .ui.inverted.link.list            
-            a.item href="#" Gestantes
-            a.item href="#" Newborn
-            a.item href="#" Crianças
-            a.item href="#" Família
+          .ui.inverted.link.list
+            - @categories.map do |c|
+              = link_to c.name, '', class: 'item'
           
         .seven.wide.column
           h4.ui.inverted.header Redes Sociais
