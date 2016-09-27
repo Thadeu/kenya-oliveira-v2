@@ -13,12 +13,15 @@ gem 'thin'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-turbolinks'
+gem 'modernizr-rails'
 
 gem 'jquery-rails'
 gem 'bootstrap-sass'
 gem 'font-awesome-sass'
 gem "responders"
 gem 'friendly_id', '~> 5.1.0'
+
+gem "fotoramajs"
 
 gem 'simple_form'
 gem 'dragonfly', '~> 1.0.12'

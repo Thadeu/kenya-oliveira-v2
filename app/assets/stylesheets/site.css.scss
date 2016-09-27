@@ -10,60 +10,47 @@
 * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
 * file per style scope.
 *
-*= require semantic
-*= require_tree .
+*
+* require_tree .
 *= require_self
 */
 
-@import "admin";
+@import "fotorama";
 @import "responsive";
+@import "bootstrap";
+@import "bootstrap-sprockets";
 
-::-webkit-scrollbar {
-  width: 6px !important;
-}
+@import "base/text";
+@import "base/image";
+@import "base/font";
 
-::-webkit-scrollbar-track {
-  background: rgba(0,0,0,.1);
-}
-
-::-webkit-scrollbar-thumb {
-  -webkit-border-radius: 1px;
-  border-radius: 1px;
-  background: rgba(0,0,0,.2);
-}
+@import "components/menu";
 
 body{
-  background: #f9f9f9;
+  background: #f8f3e7;
   -webkit-font-smooth: smooth;
   font-smooth: smooth;
 }
 
 .site{
-  @import "bootstrap";
-  @import "bootstrap-sprockets";
-
-  .photos{
-    @extend .row;
-    
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: flex-start;
-    padding: 20px;
   
-    .photo-item{
-      background: #f9f9f9;
-      border: 1px solid #f9f9f9;
-      min-height: 100px;
-      color: white;
-      font-weight: bold;
-      font-size: 1.5em;
-      text-align: center;
-      flex: 0 1 20%;
-      
+  // sidebar-left
+  @import 'components/sidebar';
+
+  // page: Home
+  .home{
+    @extend.col-md-10;
+    padding: 0 0;
+
+    .content{
+      height: 100vh;
+      overflow: hidden;
+
       img{
-        max-width: 100%;
+        @extend .image-max-width;
+        height: 100%;
       }
-      
-    }//photo-item
-  }//photos
+    }
+  } // home
+  
 } //site

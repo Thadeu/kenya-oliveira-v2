@@ -13,7 +13,7 @@ html
     
     = yield :head
 
-    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+    = stylesheet_link_tag 'admin', media: 'all', 'data-turbolinks-track' => true
     = csrf_meta_tags
     
     title Kenya Oliveira Fotográfa
@@ -27,5 +27,5 @@ html
         .ui.basic.segment.padded
           = yield
     
-    = javascript_include_tag 'application', 'data-turbolinks-eval' => false
+    = javascript_include_tag 'admin', 'data-turbolinks-eval' => false
     = yield :javascript

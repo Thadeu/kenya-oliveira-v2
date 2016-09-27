@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <meta charset="UTF-8">
+  <meta name="keywords" content="template language">
+  <meta name="author" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <%= stylesheet_link_tag 'site', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag "https://fonts.googleapis.com/css?family=Dancing+Script|Open+Sans|Pacifico", media: 'all' %>
+  <%= javascript_include_tag :modernizr %>
+  <%= csrf_meta_tags %>
+
+  <title>Kenya Oliveira :: Fotográfia</title>
+</head>
+<body>
+
+  <section class="site">
+    <%= yield :sidebar %>
+    <%= yield :content %>
+  </section>
+
+  <%= yield :footer %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-eval' => false %>
+  <%= yield :javascript %>
+  
+</body>
+</html>

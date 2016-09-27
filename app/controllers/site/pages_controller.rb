@@ -1,7 +1,6 @@
 class Site::PagesController < ApplicationController
   def index
-    @photos = Admin::Photo.order("updated_at DESC")
-    @categories = Admin::Category.order("updated_at DESC")
+    @carousel = Admin::Photo.order("updated_at DESC").take(6)
   end
 
   def photo

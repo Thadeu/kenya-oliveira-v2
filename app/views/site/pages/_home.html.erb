@@ -1,0 +1,15 @@
+<section class="home">
+  <div class="content">
+    <div class="fotorama" 
+          data-allowfullscreen="true" 
+          data-fit="cover" data-loop="true" 
+          data-autoplay="true" 
+          data-keyboard="true" 
+          data-maxwidth="100%"
+          data-nav="false">
+      <% @carousel.each do |photo| %> 
+        <%= image_tag photo.image.thumb('1280x900#').url, class: 'image', data: {fit: 'cover', caption: photo.name } if photo.image_stored? %> 
+      <% end %>
+    </div>
+  </div>
+</section>
