@@ -1,0 +1,61 @@
+<%= render "site/partials/navbar" %>
+
+<%= content_for :content do %>
+  <section class="container contact page">
+  
+    <div class="header">
+      <h3 class="title">Contato</h3>
+      <p class="subscription">Precisa de um orçamento? Tirar alguma dúvida? Entre em contato.</p>
+    </div>
+
+    <section class="map">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d981.5869716792814!2d-48.32554907080063!3d-10.233500679772742!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x933b34874390d53f%3A0x98923534accc8b3b!2sQ.+804+Sul+Alameda+14%2C+272+-+Plano+Diretor+Sul%2C+Palmas+-+TO!5e0!3m2!1spt-BR!2sbr!4v1475011255227" 
+        width="100%" 
+        height="280" 
+        frameborder="0" 
+        style="border:0" 
+        allowfullscreen></iframe>
+    </section>
+
+    <section class="content">
+      <div class="contacts">
+
+        <header>
+          <h3>ENTRE EM CONTATO POR UMA DAS OPÇÕES ABAIXO</h3>
+        </header>
+
+        <div class="item">
+          <p>Facebook Kenya Oliveira</p>
+          <a href="https://www.facebook.com/Kenya-Oliveira-Fot%C3%B3grafa-387318828065220/" class='icon facebook'>
+            <%= icon('facebook') %>
+          </a>
+        </div>
+
+        <div class="item">
+          <p>WhatsApp 63 98144-7732</p>
+          <a href="whatsapp://send?text=Kenya Oliveira Fotografa https://www.facebook.com/Kenya-Oliveira-Fot%C3%B3grafa-387318828065220/ WhatsApp 63 98144-7732 Veja meu portifolio de fotos e faça o orçamento do seu book de fotos." data-action="share/whatsapp/share" class='icon whatsapp'>
+            <%= icon('whatsapp') %>
+          </a>
+        </div>
+        
+        <div class="item">
+          <p>kenynhacacau@hotmail.com</p>
+          <a href="mailto:kenynhacacau@hotmail.com" class='icon mail'>
+            <%= icon('envelope-o') %>
+          </a>
+        </div>
+
+        <section class="atendimento">
+          <p>HORÁRIOS DE ATENDIMENTO:</p>
+          <p>Segunda à Sexta: 08h às 12h -­ 14h às 18h</p>
+          <p>Sábados: Sob consulta.</p>
+          
+          <br>
+          <p>Fone: (63) 98144-7732</p>
+          <p>kenynhacacau@hotmail.com</p>
+          <p>www.kenyaoliveira.com.br</p>
+        </section>
+      </div>
+    </section>
+  </section>
+<% end %>

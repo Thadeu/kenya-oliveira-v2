@@ -13,12 +13,22 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//
 //= require fotorama
+//= require nprogress
+//= require nprogress-turbolinks
 //= require coffee/app
 //
 // require_tree .
 
 $(document).on('page:change', function(){
-  
+
+  /**
+   * Configurações para NProgress 
+   */
+  NProgress.configure({
+    showSpinner: true,
+    ease: 'ease',
+    speed: 500
+  });
+
 });

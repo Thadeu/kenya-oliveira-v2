@@ -1,0 +1,26 @@
+.header{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+  background: $base-color image-url("pattern-adorno.jpg") repeat;
+  opacity: .8;
+
+  .title{
+    @extend .family-dancing-script;
+    font-size: 45px;
+    width: 100%;
+    text-align: center;
+    color: darken($base-color, 75%);
+  }
+
+  .subscription{
+    color: darken($base-color, 78%);
+    font-style: italic;
+    border-bottom: 1px solid transparentize($color: darken($base-color, 50%), $amount: .8);
+    padding-left: 70px;
+    padding-right: 70px;
+    padding-bottom: 20px;
+  }
+}

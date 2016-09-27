@@ -4,15 +4,15 @@ source 'https://rails-assets.org' do
 end
 
 gem 'rails', '4.2.4'
-gem 'rake', "~> 11.2.2"
+gem 'rake', "11.3.0"
 gem 'therubyracer', platforms: :ruby
-gem 'turbolinks'
+gem 'turbolinks', '5.0.0'
 gem 'sass-rails', '~> 5.0'
 gem 'jbuilder', '~> 2.0'
 gem 'thin'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
-gem 'jquery-turbolinks'
+gem 'jquery-turbolinks', '2.1.0'
 gem 'modernizr-rails'
 
 gem 'jquery-rails'
@@ -22,6 +22,7 @@ gem "responders"
 gem 'friendly_id', '~> 5.1.0'
 
 gem "fotoramajs"
+gem 'nprogress-rails'
 
 gem 'simple_form'
 gem 'dragonfly', '~> 1.0.12'

@@ -8,6 +8,12 @@ end
 
 Rails.application.routes.draw do
     
+  namespace :admin do
+    resources :abouts
+  end
+  namespace :admin do
+    resources :services
+  end
   root to: 'site/pages#index'
   get "/admin" => redirect("/admin/photos")
 

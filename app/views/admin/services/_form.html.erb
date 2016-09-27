@@ -1,0 +1,43 @@
+<div class="ui tab active" data-tab="first">
+  <div class="column">
+    <%= simple_form_for(@admin_service, html: {novalidate: false, class: 'ui form service', multipart: true}) do |f| %>
+      <%= f.error_notification %>
+      
+      <div class="field">
+        <label>Nome</label>
+        <%= f.input :name, label: false %>
+      </div>
+
+      <div class="field">
+        <label>Descrição</label>
+        <%= f.input :description, as: :text, label: false %>
+      </div>
+
+      <div class="field">
+        <%= f.input :image, as: :image_preview, label: false, size: "320x320" %>
+      </div>
+
+      <%= f.button :submit, value: 'Salvar', class: '' %>
+    <% end %>
+  </div><!-- fim column -->
+</div><!-- container tab first -->
+
+<% content_for :javascript do %>
+<script type="text/javascript">
+  $('.ui.form.service').form({
+  inline : true,
+  on: 'submit',
+    fields: {
+      empty: {
+        identifier  : 'admin_service[name]',
+        rules: [
+          {
+            type   : 'empty',
+            prompt : 'Por favor digite o nome do serviço'
+          }
+        ]
+      },
+    }
+  });
+</script>
+<% end %>

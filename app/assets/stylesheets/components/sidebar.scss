@@ -6,8 +6,8 @@ $width-sidebar: 250px;
     background: white;
     height: 100%;
     min-height: 100%;
-    @include box-shadow(0px 5px 2px #000);
     z-index: 2;
+    position: relative;
 
     .logo{
       display: flex;
@@ -26,13 +26,9 @@ $width-sidebar: 250px;
     }
 
     .footer{
-      display: flex;
-      align-items: flex-end;
-      justify-content: center;
-      flex-wrap: wrap;
-      flex-direction: row;
-      flex-grow: 1;
-      margin-top: 39vh;
+      position: absolute;
+      bottom: 20px;
+      left: 25px;
       @extend .hidden-xs;
 
       p{

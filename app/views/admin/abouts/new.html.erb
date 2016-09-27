@@ -1,0 +1,24 @@
+<div class="ui grid padded">
+  <div class="ui row">
+    <h2 class="ui header">
+      Adicionar de Sobre
+      <div class="sub header"><small>Gerenciamento de Serviços</small></div>
+    </h2>
+  </div>
+
+  <!-- Tab Menu -->
+
+  <div class="row">
+    <div class="ui secondary menu black">
+      <%= link_to 'Todos', admin_abouts_path, class: 'ui item' %>
+      <%= link_to 'Cadastrar Serviços', new_admin_about_path, class: 'ui item active' %>
+    </div>
+  </div>
+</div>
+
+<div class="ui divider horizontal">
+  <i class="icon info"></i>
+  Formulário
+</div>
+
+<%= render 'form' %>

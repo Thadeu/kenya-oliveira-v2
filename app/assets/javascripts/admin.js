@@ -14,9 +14,11 @@
 //= require jquery_ujs
 //= require semantic
 //= require turbolinks
+//
 // require_tree .
 
 $(document).on('page:change', function(){
+
   /**
    * Dimmer for hover Cards Specials
    * @private

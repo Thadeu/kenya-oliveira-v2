@@ -1,0 +1,64 @@
+.cards{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  
+  a{
+    color: darken($base-color, 75%);
+    
+    &:hover{
+      text-decoration: none;
+    }
+  }
+
+  .card{
+    flex: 0 0 auto;
+    min-height: auto;
+    margin-top: 10px;
+    margin-left: 2px;
+    margin-right: 2px;
+    border: 1px solid RGBA(0,0,0,.2);
+    @include box-shadow(0px 2px 0px RGBA(0,0,0,.2));
+
+    &:hover{
+      .card-header{
+        img{
+          @include transition(all .2s swing);
+          transform: scale(1.3);
+        }
+      }
+
+      .card-description h2{
+        background: #fff;
+      }
+    }
+    
+    .card-header{
+      overflow: hidden;
+      position: relative;
+
+      img{
+        @include transition(all .3s linear);
+      }
+    }
+
+    .card-description{
+      text-align: center;
+      height: 100%;
+      width: 100%;
+
+      h2{
+        @extend .family-dancing-script;
+        font-size: 36px;
+        padding: 10px 0 10px 0px;
+        margin: 0;
+        //background: #fff;
+
+        &:hover{
+          background: #fff;
+        }
+      }
+    }
+  }
+}

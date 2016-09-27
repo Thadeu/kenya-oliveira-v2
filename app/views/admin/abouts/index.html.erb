@@ -3,8 +3,8 @@
 <div class="ui grid padded">
   <div class="ui row">
     <h2 class="ui header">
-      Gerenciamento de Categorias
-      <div class="sub header"><small>Gerenciamento de Categorias</small></div>
+      Gerenciamento do Sobre Mim
+      <div class="sub header"><small>Gerenciamento do Sobre Mim</small></div>
     </h2>
   </div>
 
@@ -13,7 +13,7 @@
   <div class="row">
     <div class="ui secondary menu black">
       <a class="ui item active" data-tab="first">Todos</a>
-      <%= link_to 'Cadastrar Categorias', new_admin_category_path, class: 'item' %>
+      <%= link_to 'Cadastrar Sobre', new_admin_about_path, class: 'item' %>
     </div>
   </div>
 </div>
@@ -30,24 +30,21 @@
         <thead>
           <tr>
             <th>Nome</th>
-            <th>Slug</th>
-            <th>Cadastro Por</th>
+            <th>Descrição</th>
             <th></th>
             <th></th>
           </tr>
         </thead>
 
         <tbody>
-          <% @admin_categories.each do |admin_category| %>
+          <% @admin_abouts.each do |admin_about| %>
           <tr>
-            <td class=""><%= link_to admin_category.name, edit_admin_category_path(admin_category) %></td>
-            <td class="collapsing"><%= admin_category.slug %></td>
-            <td class="collapsing center aligned"><%= admin_category.user.name unless admin_category.user.blank? %></td>
+            <td class=""><%= link_to admin_about.description, edit_admin_about_path(admin_about) %></td>
             <td class="collapsing center aligned">
-              <%= link_to 'Editar', edit_admin_category_path(admin_category) %>
+              <%= link_to 'Editar', edit_admin_about_path(admin_about) %>
             </td>
             <td class="collapsing center aligned">
-              <%= link_to "Remover", admin_category_path(admin_category), method: :delete, data: {confirm: 'Tem certeza que quer excluir?'} %>
+              <%= link_to "Remover", admin_about_path(admin_about), method: :delete, data: {confirm: 'Tem certeza que quer excluir?'} %>
             </td>
           </tr>
           <% end %>

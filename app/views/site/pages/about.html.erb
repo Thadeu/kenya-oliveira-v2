@@ -1,0 +1,22 @@
+<%= render "site/partials/navbar" %>
+
+<%= content_for :content do %>
+  <section class="container about page">
+    
+    <div class="header">
+      <h3 class="title">Sobre mim</h3>
+      <p class="subscription">Conheça minha e história e venha fazer parte de meu portifolio</p>
+    </div>
+
+    <section class="content">
+      <div class="kenya-figure">
+        <%= image_tag @about.image.url, class: 'img-circle' if @about.image_stored? %>
+      </div>
+
+      <div class="description">
+        <%= @about.description if @about.description.present? %>
+      </div>
+    </section>
+
+  </section>
+<% end %>

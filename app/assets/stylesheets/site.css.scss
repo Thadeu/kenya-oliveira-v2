@@ -10,15 +10,23 @@
 * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
 * file per style scope.
 *
+*= require nprogress
+*= require nprogress-bootstrap
+*= require nprogress-turbolinks5
 *
 * require_tree .
 *= require_self
 */
 
+$base-color: #f8f3e7;
+
 @import "fotorama";
 @import "responsive";
 @import "bootstrap";
 @import "bootstrap-sprockets";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+@import "scrollbar";
 
 @import "base/text";
 @import "base/image";
@@ -27,7 +35,7 @@
 @import "components/menu";
 
 body{
-  background: #f8f3e7;
+  background: $base-color;
   -webkit-font-smooth: smooth;
   font-smooth: smooth;
 }
@@ -52,5 +60,159 @@ body{
       }
     }
   } // home
+
+  .portifolio,
+  .album,
+  .services,
+  .about,
+  .contact{
+    @extend.col-md-10;
+    overflow-y: auto;
+    padding-bottom: 50px;
+    padding-left: 0;
+    padding-right: 0;
+
+    @import 'base/header_page';
+
+  } //portifolio
+
+  .portifolio{
+    @import 'components/card';
+
+    .cards{
+      margin-top: 20px;
+    }
+  }
+
+  .album{
+    padding-bottom: 0px;
+    padding-left: 0;
+    padding-right: 0;
+
+    .home{
+      width: 100%;
+    }
+
+    .fotorama{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      flex-grow: 1;
+    }
+    
+    .content{
+      background: darken($base-color, 90%);
+      height: auto;
+    }
+  } //album do portifolio(fotos)
+
+  .services{
+    .content{
+      
+      h2{
+        color: darken($base-color, 60%);
+      }
+
+      .container{
+        img {
+          height: 200px;
+          width: 200px;
+        }
+      }
+    }
+  } //.services
+
+  .about{
+    .content{
+      margin-top: 40px;
+      display: flex;
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+
+      .kenya-figure{
+        img{
+          height: 240px;
+          width: 240px;
+          @include box-shadow(0px 0px 10px darken($base-color, 65%));
+        }
+      }
+
+      .description{
+        margin-top: 20px;
+        padding: 5px 50px;
+        font-size: 26px;
+        @extend .family-open-sans;
+        color: darken($base-color, 60%);
+      }
+    }
+  } // .about
+
+  .contact{
+    .content{
+      padding: 0 40px;
+
+      .contacts{
+        margin-top: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        header{
+          font-size: 24px;
+          @extend .family-open-sans;
+          text-align: center;
+          flex: 100%;
+          padding-bottom: 20px;
+        }
+
+        .atendimento{
+          @extend .family-open-sans;
+          flex: 100%;
+          font-size: 22px;
+          text-align: center;
+          margin-top: 30px;
+          padding-bottom: 20px;
+        }
+
+        .item{
+          flex: 0 0 auto;
+          text-align: center;
+          margin-bottom: 20px;
+
+          p{
+            padding: 10px;
+          }
+
+          .icon{
+            @extend .img-circle;
+            padding: 10px 17px;
+            font-size: 22px;
+            margin-top: 10px;
+
+            &.facebook{
+              background: #3b5998;
+              color: white;
+            }
+
+            &.whatsapp{
+              background: #43d854;
+              color: white;
+              padding: 10px 13px;
+            }
+
+            &.mail{
+              background: black;
+              color: white;
+              padding: 10px 12px;
+            }
+          }
+        }
+      }
+    }
+  } // .contact
   
 } //site

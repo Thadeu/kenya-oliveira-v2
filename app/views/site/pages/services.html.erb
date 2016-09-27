@@ -1,0 +1,37 @@
+<%= render "site/partials/navbar" %>
+
+<%= content_for :content do %>
+  <section class="container services page">
+    
+    <div class="header">
+      <h3 class="title">Serviços</h3>
+      <p class="subscription">Além da qualidade, ter amor pelo que faz a diferença</p>
+    </div>
+
+    <section class="content">
+       <div class="container">
+          <div class="row text-center">
+            
+            <h2>Pensando em tirar umas fotos? Veja alguns serviços.</h2><br>
+
+            <div class="categories">
+              <div class="cards">
+              <% @services.each do |service| %>
+
+                <% if service.image.present? %>
+                  <div class="col-md-4 col-sm-4">
+                    <%= image_tag service.image.thumb('200x200#', quality: 60).url, class: 'img-circle' %>
+                    <h3><%= service.name %></h3>
+                    <p><%= service.description unless service.description.blank?  %></p>
+                  </div>
+                <% end %>
+
+              <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+
+  </section>
+<% end %>

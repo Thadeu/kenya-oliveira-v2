@@ -1,0 +1,29 @@
+<%= render "site/partials/navbar" %>
+
+<%= content_for :content do %>
+  <section class="container album page">
+    
+    <div class="header">
+      <h3 class="title"><%= @category.name %></h3>
+      <p class="subscription">Meus trabalhos feitos recentemente</p>
+    </div>
+
+    <section class="home">
+      <div class="content">
+        <div class="fotorama" 
+              data-transition="dissolve"
+              data-navposition="top"
+              data-allowfullscreen="true" 
+              data-loop="true"
+              data-fit="cover"  
+              data-keyboard="true"
+              data-nav="thumbs">
+          <% @photos.each do |photo| %>
+            <%= image_tag photo.image.url, class: 'image', data: {fit: 'scaledown'} if photo.image_stored? %>  
+          <% end %>
+        </div>
+      </div>
+    </section>
+
+  </section>
+<% end %>

@@ -16,6 +16,12 @@
 
           = link_to admin_photos_path, class: 'item'
             | Gerenciamento de Fotos
+            
+          = link_to admin_services_path, class: 'item'
+            | Gerenciamento de Serviços
+          
+          = link_to admin_abouts_path, class: 'item'
+            | Gerenciamento de Sobre
           
           = link_to destroy_admin_user_session_path, method: :delete, data: {confirm: 'Deseja sair do sistema?'}, class: 'ui item right'
             i.sign.out.icon
@@ -44,6 +50,12 @@
 
           = link_to admin_photos_path, class: 'item'
             | Gerenciamento de Fotos
+          
+          = link_to admin_services_path, class: 'item'
+            | Gerenciamento de Serviços
+          
+          = link_to admin_abouts_path, class: 'item'
+            | Gerenciamento de Sobre
 
           = link_to destroy_admin_user_session_path, method: :delete, data: {confirm: 'Deseja sair do sistema?'}, class: 'ui item'
             i.sign.out.icon

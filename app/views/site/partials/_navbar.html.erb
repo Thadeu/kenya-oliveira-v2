@@ -3,15 +3,17 @@
   <div class="sidebar-left">
     
     <div class="logo">
-      <%= image_tag 'logo_black' %>
+      <%= link_to root_path do %>
+        <%= image_tag 'logo_black' %>
+      <% end %>
     </div>
 
     <nav class="menu">
       <ul>
-        <li><a href="#">Portifolio</a></li>
-        <li><a href="#">Serviços</a></li>
-        <li><a href="#">Sobre mim</a></li>
-        <li><a href="#">Contatos</a></li>
+        <li><%= link_to 'Portifolio', site_portifolio_path %></li>
+        <li><%= link_to 'Serviços', site_services_path %></li>
+        <li><%= link_to 'Sobre Mim', site_about_path %></li>
+        <li><%= link_to 'Contatos', site_contact_path %></li>
       </ul>
     </nav>
 
