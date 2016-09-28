@@ -1,25 +1,39 @@
+<% content_for :nav_links do %>
+<ul>
+  <li><%= link_to 'Home', root_path %></li>
+  <li><%= link_to 'Portifolio', site_portifolio_path %></li>
+  <li><%= link_to 'Serviços', site_services_path %></li>
+  <li><%= link_to 'Sobre Mim', site_about_path %></li>
+  <li><%= link_to 'Contatos', site_contact_path %></li>
+</ul>
+<% end %>
+
 <% content_for :sidebar do %>
-  
+
+  <div class="navs-mobile">
+    <span class="mobile-icon menu"><%= icon('bars') %></span>
+    <span class="mobile-icon close"><%= icon('close') %></span>
+  </div>
+
+  <nav class="menu-mobile">
+    <%= yield :nav_links %>
+  </nav>
+
   <div class="sidebar-left">
     
     <div class="logo">
       <%= link_to root_path do %>
-        <%= image_tag 'logo_black' %>
+        <%= image_tag 'logo_black.png' %>
       <% end %>
     </div>
 
     <nav class="menu">
-      <ul>
-        <li><%= link_to 'Portifolio', site_portifolio_path %></li>
-        <li><%= link_to 'Serviços', site_services_path %></li>
-        <li><%= link_to 'Sobre Mim', site_about_path %></li>
-        <li><%= link_to 'Contatos', site_contact_path %></li>
-      </ul>
+      <%= yield :nav_links %>
     </nav>
 
     <div class="footer">
       <p>Todos os Direitos Reservados</p>
-      <p>by <%= image_tag 'logo-dev' %></p>
+      <p>by <%= image_tag 'logo-dev.png' %></p>
     </div>
 
   </div> <!-- sidebar -->

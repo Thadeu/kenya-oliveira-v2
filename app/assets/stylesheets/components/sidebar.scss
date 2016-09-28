@@ -1,6 +1,68 @@
 
 $width-sidebar: 250px;
 
+.mobile-icon{
+  font-size: 30px;
+  position: fixed;
+  top: 10px;
+  right: 20px;
+  cursor: pointer;
+  color: #333;
+  z-index: 9999;
+  display: none;
+
+  &.menu{
+    color: #111;
+  }
+
+  &.close{
+    color: #111;
+  }
+}
+
+.menu-mobile{
+  background: white;
+  height: 100%;
+  min-height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: 999;
+  padding-bottom: 30px;
+
+  display: none;
+
+  ul{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin-top: 20px;
+
+    li{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      padding: 10px;
+
+      font-size: 42px;
+      @extend .family-dancing-script;
+
+      a{
+        color: #333;
+
+        &:active,
+        &:focus,
+        &:hover{
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
 .sidebar-left{
     @extend .col-md-2;
     background: white;
@@ -26,9 +88,8 @@ $width-sidebar: 250px;
     }
 
     .footer{
-      position: absolute;
-      bottom: 20px;
-      left: 25px;
+      margin-top: 50px;
+      padding-bottom: 30px;
       @extend .hidden-xs;
 
       p{

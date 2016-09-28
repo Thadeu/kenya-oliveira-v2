@@ -21,3 +21,17 @@ $ () ->
     resizeSidebar($(document).width())
   ) 
 
+  $('.menu-mobile').css('height', $(document).height())
+
+  $('.mobile-icon.menu').on 'click', (e) ->
+    e.preventDefault()
+    $('.menu-mobile').show()
+    $('.mobile-icon.menu').hide()
+    $('.mobile-icon.close').show()
+  
+  $('.mobile-icon.close').on 'click', (e) ->
+    e.preventDefault()
+    $('.mobile-icon.close').hide()
+    $('.menu-mobile').hide()
+    $('.mobile-icon.menu').show()
+  

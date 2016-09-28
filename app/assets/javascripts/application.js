@@ -11,6 +11,7 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
 //= require turbolinks
 //= require fotorama
@@ -26,7 +27,7 @@ $(document).on('page:change', function(){
    * Configurações para NProgress 
    */
   NProgress.configure({
-    showSpinner: true,
+    showSpinner: false,
     ease: 'ease',
     speed: 500
   });
