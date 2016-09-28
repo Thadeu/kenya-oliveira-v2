@@ -27,4 +27,15 @@ class User < ActiveRecord::Base
 
   has_many :admin_category, class_name: 'Admin::Category'
   has_many :admin_photo, class_name: 'Admin::Photo'
+
+  before_save :set_auth_token
+
+  def set_auth_token
+    return if token.present?
+    self.token = User.generate_auth_token
+  end
+
+  def self.generate_auth_token
+    SecureRandom.uuid.gsub(/\-/,'')
+  end
 end

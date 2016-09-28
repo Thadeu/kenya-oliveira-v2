@@ -7,7 +7,7 @@ class ActionDispatch::Routing::Mapper
 end
 
 Rails.application.routes.draw do
-    
+
   namespace :admin do
     resources :abouts
   end
@@ -19,4 +19,5 @@ Rails.application.routes.draw do
 
   draw :site
   draw :admin
+  draw :api
 end

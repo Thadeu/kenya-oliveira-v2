@@ -45,6 +45,9 @@ group :forms, :pdf do
   gem "mini_magick"
 end
 
+# api
+gem 'rack-cors'
+
 gem 'web-console', '~> 2.0', group: :development
 group :development, :test do
   gem 'sdoc', '~> 0.4.0', group: :doc
