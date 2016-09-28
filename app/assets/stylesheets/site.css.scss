@@ -78,6 +78,7 @@ body{
 
   .portifolio{
     @import 'components/card';
+    overflow-x: hidden;
 
     .cards{
       margin-top: 20px;
@@ -151,7 +152,6 @@ body{
   } // .about
 
   .contact{
-    width: 100%;
     
     .content{
       padding: 0 40px;
