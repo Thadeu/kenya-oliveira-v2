@@ -1,6 +1,6 @@
 class Api::V1::CategoriesController < Api::ApiController
 
-  before_action :authenticate_token
+  #before_action :authenticate_token
 
   def index
     categories = Admin::Category.order('name ASC')
