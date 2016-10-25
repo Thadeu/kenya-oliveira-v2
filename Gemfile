@@ -15,7 +15,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-turbolinks', '2.1.0'
 gem 'modernizr-rails'
-gem 'mime-types-data', '3.2016.0521'
+gem "mime-types", '2.6.2'
 
 gem 'jquery-rails'
 gem 'bootstrap-sass'
