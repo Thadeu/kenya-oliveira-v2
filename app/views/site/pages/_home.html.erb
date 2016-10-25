@@ -10,7 +10,7 @@
           data-maxwidth="100%"
           data-nav="false">
       <% @carousel.each do |photo| %> 
-        <%= image_tag photo.image.thumb('1680x1080#').url, class: 'image', data: {fit: 'cover', caption: photo.name } if photo.image_stored? %> 
+        <%= image_tag photo.image.thumb('1280x1080#').url, class: 'image', data: {fit: 'cover', caption: photo.name } if photo.image_stored? %> 
       <% end %>
     </div>
   </div>
