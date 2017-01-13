@@ -4,7 +4,7 @@ source 'https://rails-assets.org' do
 end
 
 gem 'rails', '4.2.4'
-gem 'rake', "11.2.2"
+gem 'rake', "12.0.0"
 gem 'nokogiri', '1.6.8'
 gem 'therubyracer', platforms: :ruby
 gem 'turbolinks', '2.5.3'
