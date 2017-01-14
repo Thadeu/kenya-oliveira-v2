@@ -2,7 +2,9 @@ require 'dragonfly'
 
 # Configure
 Dragonfly.app.configure do
-  plugin :imagemagick
+  plugin :imagemagick,
+	convert_command: "/usr/local/bin/convert",
+	identify_command: "/usr/local/bin/identify"
 
   secret "d4daf39f7a689aa7c1f0f5f297b288eeeef009289c2fa3ba3df242c0a354e163"
 

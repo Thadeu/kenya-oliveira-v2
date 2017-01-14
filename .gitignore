@@ -14,7 +14,10 @@
 .settings/
 *~
 nbproject/
+public/assets
+.ruby-*
 
+passenger*
 # Lock
 Gemfile.lock
 
