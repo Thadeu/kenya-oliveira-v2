@@ -1,4 +1,0 @@
----
-name: hirohito.jpeg
-model_class: Admin::Photo
-model_attachment: image
